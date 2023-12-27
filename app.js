@@ -49,7 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // }
 // app.use(cors(corsOptions));
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: '*',
   credentials: true,
   optionSuccessStatus: 200
 }
