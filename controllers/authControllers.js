@@ -67,7 +67,7 @@ const doLogin = async (req, res) => {
           }, 
           // process.env.JWT_PASSWORD ?? "bookMyCourt",
           // { expiresIn: "2d" }
-          process.env.JWT_PASSWORD,{ expiresIn: "2d" }
+          process.env.JWT_PASSWORD,{ expiresIn: "1d" }
 
         );
         res.status(200).json({message:"Authentication successful", token, user:user});

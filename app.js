@@ -13,7 +13,7 @@ const dotenv = require('dotenv').config();
 if (dotenv.error) {
   throw dotenv.error
 }
-console.log(process.env.JWT_PASSWORD);
+console.log(process.env.JWT_PASSWORD ,"jwt password");
 
 
 var indexRouter = require('./routes/index');
@@ -37,23 +37,25 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use(cors());
+app.use(cors());
 
 
 // cors error resolving
 
-// const corsOptions ={
-//     origin:'http://localhost:3000', 
-//     credentials:true,            //access-control-allow-credentials:true
-//     optionSuccessStatus:200
-// }
-// app.use(cors(corsOptions));
-const corsOptions = {
-  origin: '*',
-  credentials: true,
-  optionSuccessStatus: 200
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200
 }
 app.use(cors(corsOptions));
+
+
+// const corsOptions = {
+//   origin: 'http://localhost:3000',
+//   credentials: true,
+//   optionSuccessStatus: 200
+// }
+// app.use(cors(corsOptions));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
