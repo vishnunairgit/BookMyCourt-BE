@@ -1,10 +1,9 @@
 const COURT = require("../models/courtSchema");
 const COURT_SCHEDULES = require("../models/courtSchedules");
-const { json } = require("express");
-const { response } = require("../app");
 
 
-const addCourtData = async (req, res) => {
+
+const addCourtData= async (req, res) => {
   // console.log( "hiii");
   try {
     await COURT({
@@ -61,10 +60,11 @@ const addTimeSlotData = (req, res) => {
   };
 
 // editCourtfunction
+
  const updateEditCourtData = (req,res)=>{
   // console.log(req.body);
 
-  COURT.updateOne({_Id:req.body._Id},{$set:{CourtName:req.body.CourtName, 
+  COURT.updateOne({_id:req.body._id},{$set:{CourtName:req.body.CourtName, 
     location:req.body.location,
     address:req.body.address,
     type:req.body.type
@@ -74,5 +74,5 @@ const addTimeSlotData = (req, res) => {
 
  }
 
-module.exports={addCourtData,addTimeSlotData,updateEditCourtData}
+module.exports={ addCourtData, addTimeSlotData, updateEditCourtData}
 

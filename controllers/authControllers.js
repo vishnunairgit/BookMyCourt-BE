@@ -1,7 +1,3 @@
-// const { response } = require('../app');
-const { json } = require("express");
-// const users = require('../models/userModel');
-const users = require("../models/userModel");
 const USERS = require("../models/userModel");
 // password hiding -using bcrypt
 const bcrypt = require("bcrypt");

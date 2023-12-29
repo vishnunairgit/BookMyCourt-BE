@@ -15,11 +15,11 @@ const fileStorage=multer.diskStorage({
 })
 
 const upload = multer({storage:fileStorage})
-router.post('/addCourtData',adminAuth,upload.single('image'),addCourtData )
+router.post('/addCourtData',adminAuth,upload.single('image'), addCourtData)
 //  adminAuth,  /// upload.single('image') .both are middlewares
 
-router.post('/addTimeSlotData', adminAuth, addTimeSlotData )
-router.post('/updateEditCourtData', adminAuth, updateEditCourtData )
+router.post('/addTimeSlotData', adminAuth, addTimeSlotData)
+router.post('/updateEditCourtData', adminAuth, updateEditCourtData)
 
 
 

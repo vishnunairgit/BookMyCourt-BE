@@ -8,13 +8,10 @@ const courtSchema=mongoose.Schema({
     location:{
         type:String,
         required:true,
-        unique:true
-
     },
     address:{
         type:String,
         required:true,
-        // unique:true
     },
     type:{
         type:String,
@@ -33,3 +30,11 @@ const courtSchema=mongoose.Schema({
  const court=mongoose.model('courts', courtSchema)
  module.exports=court;
 
+
+
+ 
+//   address:{
+//     type:String,
+//     required:true,
+//     // unique:true
+// },
