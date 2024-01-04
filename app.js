@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const connectDB = require ('./config/db');
 const cors = require('cors');
+var app =express();
+
 // const adminRouter =require('./routes/adminRouter')
 
 // require('dotenv').config
@@ -13,7 +15,10 @@ const dotenv = require('dotenv').config();
 if (dotenv.error) {
   throw dotenv.error
 }
-console.log(process.env.JWT_PASSWORD ,"jwt password");
+// console.log(process.env.JWT_PASSWORD ,"jwt password");
+app.use(cors({ 
+  origin:['https://bookmycourt-app-4yrm.onrender.com','http://localhost:3000']
+ }));
 
 
 var indexRouter = require('./routes/index');
@@ -40,28 +45,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(cors({ 
-  origin:['https://bookmycourt-app-4yrm.onrender.com','http://localhost:3000']
- }));
+
 
 
 
 // cors error resolving
 
-// const corsOptions ={
-//     origin:['https://bookmycourt-app-4yrm.onrender.com','http://localhost:3000'], 
-//     credentials:true,            //access-control-allow-credentials:true
-//     optionSuccessStatus:200
-// }
-// app.use(cors(corsOptions));
-
-
-// const corsOptions = {
-//   origin: 'http://localhost:3000',
-//   credentials: true,
-//   optionSuccessStatus: 200
-// }
-// app.use(cors(corsOptions));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
