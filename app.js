@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const connectDB = require ('./config/db');
 const cors = require('cors');
-var app =express();
+var app = express();
 
 // const adminRouter =require('./routes/adminRouter')
 
@@ -18,7 +18,7 @@ if (dotenv.error) {
 // console.log(process.env.JWT_PASSWORD ,"jwt password");
 app.use(cors({ 
   origin:['https://bookmycourt-app-4yrm.onrender.com','http://localhost:3000']
- }));
+ }))
 
 
 var indexRouter = require('./routes/index');
@@ -31,8 +31,6 @@ const paymentRouts =require('./routes/paymentRouts');
 
 
 // const { connect } = require('http2');
-
-var app = express();
 connectDB();
 
 // view engine setup
