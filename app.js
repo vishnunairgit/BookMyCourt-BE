@@ -43,7 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // cors error resolving
 
 const corsOptions ={
-    origin:'http://localhost:3000', 
+    origin:['https://bookmycourt-app-4yrm.onrender.com','http://localhost:3000'], 
     credentials:true,            //access-control-allow-credentials:true
     optionSuccessStatus:200
 }
