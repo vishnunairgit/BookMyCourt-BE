@@ -39,7 +39,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors({ 
   origin:['https://bookmycourt-app-4yrm.onrender.com','http://localhost:3000']
- }))
+ }));
 
 
 // cors error resolving
