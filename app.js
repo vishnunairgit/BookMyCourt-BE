@@ -17,7 +17,7 @@ if (dotenv.error) {
 }
 // console.log(process.env.JWT_PASSWORD ,"jwt password");
 app.use(cors({ 
-  origin:['https://bookmycourt-app-4yrm.onrender.com','http://localhost:3000']
+  origin:['http://localhost:3000','https://bookmycourt-app-4yrm.onrender.com']
  }))
 
 
