@@ -23,6 +23,8 @@ const adminRouter =require('./routes/adminRouter');
 const paymentRouts =require('./routes/paymentRouts');
 
 
+
+
 // const { connect } = require('http2');
 
 var app = express();
@@ -37,9 +39,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(cors({ 
   origin:['https://bookmycourt-app-4yrm.onrender.com','http://localhost:3000']
  }));
+
 
 
 // cors error resolving
