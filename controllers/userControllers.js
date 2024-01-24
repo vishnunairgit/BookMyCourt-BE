@@ -4,15 +4,38 @@ const COURT_SHEDULES = require("../models/courtSchedules");
 // const { ObjectId } = require("mongodb");
 const ObjectId = require("mongoose").Types.ObjectId;
 
-function getAllCourtData(req, res) {
-  COURTS.find()
-    .then((response) => {
-      res.status(200).json(response);
-    })
-    .catch((err) => {
-      res.status(501).json(err);
-    });
+// function getAllCourtData(req, res) {
+//   try {
+//     COURTS.find()
+//     .then((response) => {
+//       res.status(200).json(response);
+//     })
+//   } catch (error) {
+    
+//     res.status(501).json(err);
+//   }
+//   // COURTS.find()
+//   //   .then((response) => {
+//   //     res.status(200).json(response);
+//   //   })
+//   //   .catch((err) => {
+//   //     res.status(501).json(err);
+//   //   });
+// }
+
+async function getAllCourtData(req, res) {
+  try {
+    const response = await COURTS.find();
+    res.status(200).json(response);
+  } catch (err) {
+    res.status(501).json(err);
+  }
 }
+
+
+
+
+
 
 const getSingleCourtData = async (req, res) => {
   try {
